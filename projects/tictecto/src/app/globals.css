@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-space-grotesk), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  
+  --color-accent-red: #FF3B30;
+  
+  --color-nt-black: #000000;
+  --color-nt-white: #ffffff;
+  
+  /* Neutral Dark Theme colors */
+  --color-nt-bg-dark: #000000;
+  --color-nt-panel-dark: #09090b;
+  --color-nt-border-dark: #18181b;
+  --color-nt-border-hover-dark: #27272a;
+  --color-nt-text-dark: #fafafa;
+  --color-nt-text-muted-dark: #71717a;
+  
+  /* Neutral Light Theme colors */
+  --color-nt-bg-light: #fafafa;
+  --color-nt-panel-light: #ffffff;
+  --color-nt-border-light: #e4e4e7;
+  --color-nt-border-hover-light: #d4d4d8;
+  --color-nt-text-light: #09090b;
+  --color-nt-text-muted-light: #a1a1aa;
+}
+
+/* Custom scrollbars and styling */
+::selection {
+  background-color: #FF3B30;
+  color: #ffffff;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Nothing-inspired Dotted Grid Background */
+.dot-grid {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.dark .dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Glassmorphism panel */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-panel-dark {
+  background: rgba(9, 9, 11, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Retro-futuristic scanning lines or subtle noise if required - we keep it clean */
+.pixelated-border {
+  border-image: repeating-linear-gradient(45deg, currentColor, currentColor 2px, transparent 2px, transparent 10px) 1;
+}
